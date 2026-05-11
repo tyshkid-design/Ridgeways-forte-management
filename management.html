@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Management – Ridgeways Forte</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .page-hero{background:var(--blue);padding:80px 40px 60px;text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:48px 48px;}
+    .page-hero h1{font-family:var(--font-heading);font-size:clamp(32px,4vw,52px);color:var(--white);font-weight:bold;position:relative;}
+    .page-hero p{color:rgba(255,255,255,0.7);font-size:15px;margin-top:12px;position:relative;}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:16px;position:relative;}
+    .breadcrumb a{color:#7DD4A8;}
+    .service-page{max-width:1200px;margin:0 auto;padding:72px 40px;}
+    .service-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;}
+    /* ══ SERVICE PAGE IMAGE ══
+       Replace src below with a photo of a managed property or your team.
+       Recommended: 700×480px
+    ══ */
+    .service-intro img{width:100%;height:420px;object-fit:cover;border-radius:10px;box-shadow:0 16px 48px rgba(26,75,140,0.15);display:block;}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+    .feature-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:32px 26px;border-top:3px solid var(--blue);transition:box-shadow 0.3s,transform 0.3s;}
+    .feature-card:hover{box-shadow:0 8px 32px rgba(26,75,140,0.12);transform:translateY(-4px);}
+    .feature-icon{font-size:30px;margin-bottom:16px;}
+    .feature-card h4{font-family:var(--font-heading);font-size:20px;color:var(--blue);font-weight:bold;margin-bottom:10px;}
+    .feature-card p{font-size:13px;color:var(--text-muted);line-height:1.8;}
+    .cta-band{background:var(--blue);padding:60px 40px;text-align:center;}
+    .cta-band h2{font-family:var(--font-heading);font-size:clamp(28px,3vw,40px);color:var(--white);font-weight:bold;margin-bottom:12px;}
+    .cta-band p{color:rgba(255,255,255,0.75);font-size:15px;margin-bottom:28px;}
+    .cta-band .btn-white{display:inline-block;background:var(--white);color:var(--blue);padding:13px 36px;font-size:13px;font-weight:bold;border-radius:4px;transition:all 0.25s;margin:0 8px;}
+    .cta-band .btn-white:hover{background:var(--green);color:var(--white);}
+    .cta-band .btn-wa{display:inline-block;background:#25D366;color:var(--white);padding:13px 36px;font-size:13px;font-weight:bold;border-radius:4px;transition:all 0.25s;margin:0 8px;}
+    .cta-band .btn-wa:hover{background:#1ebe5d;}
+    @media(max-width:1024px){.service-intro{grid-template-columns:1fr;}.features-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){.service-page{padding:48px 20px;}.page-hero{padding:60px 20px 48px;}.features-grid{grid-template-columns:1fr;}.cta-band{padding:48px 20px;}}
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="tb-left"><span class="tb-dot">◆</span> Mon – Sat: 8:00 AM – 5:00 PM</div>
+  <div class="tb-right"><span>High View Plaza, 2nd Floor, Kiambu Road</span><a href="tel:+254793035731">0793 035 731</a><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+          <img src="logo.png" alt="Ridgeways Forte" style="height: 50px; width: auto;">
+          <div class="logo-text">
+            Ridgeways Forte
+            <span>Property Management</span>
+          </div>
+        </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About ▾</a><div class="dropdown"><a href="about.html">Our Story</a><a href="about.html#team">Meet the Team</a><a href="contact.html">Inquiry Form</a></div></li>
+      <li><a href="listings.html">Listings ▾</a><div class="dropdown"><a href="listings.html">All Properties</a><a href="listings.html?type=apartment">Apartments</a><a href="listings.html?type=townhouse">Townhouses</a><a href="listings.html?type=villa">Villas</a><a href="listings.html?type=commercial">Commercial</a></div></li>
+      <li><a href="management.html" class="active-page">Property Management</a></li>
+      <li><a href="marketing.html">Property Marketing</a></li>
+      <li><a href="cleaning.html">Cleaning Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="listings.html">All Listings</a>
+  <a href="management.html">Property Management</a><a href="marketing.html">Property Marketing</a>
+  <a href="cleaning.html">Cleaning Services</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Property Management</div>
+  <h1>Property Management</h1>
+  <p>We protect and grow your property investment — so you don't have to.</p>
+</div>
+<hr class="divider">
+
+<div class="service-page">
+  <div class="service-intro">
+    <div class="reveal">
+      <!-- ══ REPLACE WITH YOUR OWN PHOTO ══
+           Example: src="../images/management-photo.jpg"
+           Show a managed apartment block or your team on-site.
+      ══ -->
+      <img src="ridgeways forte.jpg" alt="Property Management"
+        onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:420px;border-radius:10px;\'><span>🏢</span>Add photo: images/service-management.jpg</div>'">
+    </div>
+    <div class="reveal">
+      <div class="section-label">Our Service</div>
+      <h2 class="section-title">Full-Service <span>Property Management</span></h2>
+      <p class="section-sub" style="max-width:100%;">
+        At Ridgeways Forte, we take the stress out of being a landlord. Our experienced team handles every aspect of your property — from sourcing tenants and collecting rent to maintenance coordination and legal compliance — so your investment works for you around the clock.
+      </p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:28px;">
+        We manage residential apartments, commercial retail spaces, and industrial warehouses across Nairobi. Our approach is professional, transparent, and results-driven — protecting your asset value while generating consistent monthly income.
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">Get Started Today</a>
+        <a href="https://wa.me/254793035731?text=Hello,%20I%20am%20interested%20in%20Property%20Management%20services." class="btn-green" target="_blank">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;" class="reveal">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">Everything You Need, <span>Handled</span></h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔍</div>
+      <h4>Tenant Screening</h4>
+      <p>We rigorously vet every tenant — checking employment, references, and rental history — so only reliable occupants access your property.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">💰</div>
+      <h4>Rent Collection</h4>
+      <p>Timely, consistent rent collection with full financial reporting. We follow up on arrears firmly and professionally on your behalf.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔧</div>
+      <h4>Maintenance & Repairs</h4>
+      <p>We coordinate all maintenance requests quickly using our trusted network of qualified contractors — keeping your property in top condition.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📋</div>
+      <h4>Lease Management</h4>
+      <p>We draft, renew, and enforce lease agreements in full compliance with Kenyan landlord-tenant law — minimising your legal exposure.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📊</div>
+      <h4>Monthly Reporting</h4>
+      <p>Transparent monthly statements detailing income, expenses, and property performance — so you always know exactly where you stand.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🏠</div>
+      <h4>Property Inspections</h4>
+      <p>Regular scheduled inspections ensure tenants are maintaining your property to the required standard and flag issues early.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to Hand Over the Keys?</h2>
+  <p>Let us manage your property while you enjoy the returns. Call or WhatsApp us today.</p>
+  <a href="inquiry.html" class="btn-white">Send an Inquiry</a>
+  <a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte,%20I%20want%20to%20discuss%20property%20management." class="btn-wa" target="_blank">WhatsApp Now</a>
+</div>
+
+<a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte." class="whatsapp-float" target="_blank">
+  <span class="whatsapp-float-label">Chat with us</span>
+  <div class="whatsapp-float-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Ridgeways Forte" style="height: 44px; width: auto;">
+        <div class="footer-logo-text">
+          Ridgeways Forte
+          <span>Property Management</span>
+        </div>
+      </div>
+      <p>Our team is ready to assist you with all your real estate needs.</p>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul><li><a href="#">Nairobi</a></li><li><a href="#">Ridgeways</a></li><li><a href="#">Westlands</a></li><li><a href="#">Kiambu Road</a></li></ul></div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="management.html">Property Management</a></li><li><a href="marketing.html">Property Marketing</a></li><li><a href="cleaning.html">Cleaning Services</a></li><li><a href="listings.html">All Listings</a></li></ul></div>
+    <div class="footer-col footer-contact"><h5>Contact Us</h5><p>High View Plaza, 2nd Floor<br>Kiambu Road, P.O Box 64780 – 00620 Nairobi</p><p><a href="tel:+254793035731">0793 035 731</a></p><p><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></p></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Ridgeways Forte Property Management. All rights reserved.</span>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61572052684912" class="social-link" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ridgeways_properties/" class="social-link" target="_blank" title="Instagram"><i class="fab fa-square-instagram"></i></a>
+      <!-- ── WHATSAPP — change number here (no + sign, include country code) ── -->
+      <a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte%2C%20I%20would%20like%20to%20enquire%20about%20a%20property."
+         class="social-link whatsapp" target="_blank" title="WhatsApp">
+        <!-- WhatsApp icon (SVG) -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+
+<!-- ══════════════════════════════════════════════════
+     CHAT POP-UP (bottom-right)
+     Replaces the old floating WhatsApp button
+     ══════════════════════════════════════════════════ -->
+<div class="chat-float" id="chatFloat" aria-live="polite">
+  <button class="chat-fab" id="chatFab" type="button" aria-label="Open chat">
+    <span class="chat-fab-icon">💬</span>
+  </button>
+
+  <div class="chat-popup" id="chatPopup" role="dialog" aria-modal="false" aria-label="Chat with Ridgeways Forte">
+    <div class="chat-header">
+      <div class="chat-title">Hey, welcome to RidgewaysForte</div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-bubble">Choose a service to get started:</div>
+      <div class="chat-quicklinks">
+        <a class="chat-link" href="management.html">House Haunting</a>
+        <a class="chat-link" href="marketing.html">Property Marketing</a>
+        <a class="chat-link" href="cleaning.html">Cleaning Services</a>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <a class="chat-footer-btn" href="contact.html">Contact Us →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

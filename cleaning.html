@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Services – Ridgeways Forte</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .page-hero{background:var(--blue);padding:80px 40px 60px;text-align:center;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:48px 48px;}
+    .page-hero h1{font-family:var(--font-heading);font-size:clamp(32px,4vw,52px);color:var(--white);font-weight:bold;position:relative;}
+    .page-hero p{color:rgba(255,255,255,0.7);font-size:15px;margin-top:12px;position:relative;}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:16px;position:relative;}
+    .breadcrumb a{color:#7DD4A8;}
+    .service-page{max-width:1200px;margin:0 auto;padding:72px 40px;}
+    .service-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;}
+    .service-intro img{width:100%;height:420px;object-fit:cover;border-radius:10px;box-shadow:0 16px 48px rgba(26,75,140,0.15);display:block;}
+    .cleaning-types{background:var(--grey-pale);padding:72px 40px;}
+    .cleaning-inner{max-width:1200px;margin:0 auto;}
+    .cleaning-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;}
+    .cleaning-card{background:var(--white);border-radius:10px;padding:32px;border:1px solid var(--border);display:flex;gap:20px;transition:box-shadow 0.3s,transform 0.3s;}
+    .cleaning-card:hover{box-shadow:0 8px 32px rgba(26,75,140,0.1);transform:translateY(-3px);}
+    .cleaning-icon{width:52px;height:52px;background:var(--green-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+    .cleaning-card h4{font-family:var(--font-heading);font-size:20px;color:var(--blue);font-weight:bold;margin-bottom:8px;}
+    .cleaning-card p{font-size:13px;color:var(--text-muted);line-height:1.8;}
+    .checklist{margin-top:12px;display:flex;flex-direction:column;gap:6px;}
+    .checklist span{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px;}
+    .checklist span::before{content:'✓';color:var(--green);font-weight:bold;font-size:13px;}
+    .cta-band{background:var(--blue);padding:60px 40px;text-align:center;}
+    .cta-band h2{font-family:var(--font-heading);font-size:clamp(28px,3vw,40px);color:var(--white);font-weight:bold;margin-bottom:12px;}
+    .cta-band p{color:rgba(255,255,255,0.75);font-size:15px;margin-bottom:28px;}
+    .cta-band .btn-white{display:inline-block;background:var(--white);color:var(--blue);padding:13px 36px;font-size:13px;font-weight:bold;border-radius:4px;margin:0 8px;transition:all 0.25s;}
+    .cta-band .btn-white:hover{background:var(--green);color:var(--white);}
+    .cta-band .btn-wa{display:inline-block;background:#25D366;color:var(--white);padding:13px 36px;font-size:13px;font-weight:bold;border-radius:4px;margin:0 8px;transition:all 0.25s;}
+    .cta-band .btn-wa:hover{background:#1ebe5d;}
+    @media(max-width:1024px){.service-intro{grid-template-columns:1fr;}.cleaning-grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){.service-page,.cleaning-types{padding:48px 20px;}.page-hero{padding:60px 20px 48px;}.cta-band{padding:48px 20px;}}
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="tb-left"><span class="tb-dot">◆</span> Mon – Sat: 8:00 AM – 5:00 PM</div>
+  <div class="tb-right"><span>High View Plaza, 2nd Floor, Kiambu Road</span><a href="tel:+254793035731">0793 035 731</a><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+          <img src="logo.png" alt="Ridgeways Forte" style="height: 50px; width: auto;">
+          <div class="logo-text">
+            Ridgeways Forte
+            <span>Property Management</span>
+          </div>
+        </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About ▾</a><div class="dropdown"><a href="about.html">Our Story</a><a href="about.html#team">Meet the Team</a><a href="contact.html">Inquiry Form</a></div></li>
+      <li><a href="listings.html">Listings ▾</a><div class="dropdown"><a href="listings.html">All Properties</a><a href="listings.html?type=apartment">Apartments</a><a href="listings.html?type=townhouse">Townhouses</a><a href="listings.html?type=villa">Villas</a><a href="listings.html?type=commercial">Commercial</a></div></li>
+      <li><a href="management.html">Property Management</a></li>
+      <li><a href="marketing.html">Property Marketing</a></li>
+      <li><a href="cleaning.html" class="active-page">Cleaning Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="listings.html">All Listings</a>
+  <a href="management.html">Property Management</a><a href="marketing.html">Property Marketing</a>
+  <a href="cleaning.html">Cleaning Services</a><a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Cleaning Services</div>
+  <h1>Cleaning Services</h1>
+  <p>Professional post-construction and deep cleaning for residential and commercial properties.</p>
+</div>
+<hr class="divider">
+
+<div class="service-page">
+  <div class="service-intro">
+    <div class="reveal">
+      <!-- ══ REPLACE WITH YOUR OWN PHOTO ══
+           A photo of your cleaning team at work or a freshly cleaned property.
+           Recommended: 700×480px
+           Example: src="../images/service-cleaning.jpg"
+      ══ -->
+      <img src="cleaning.jpg" alt="Cleaning Services"
+        onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:420px;border-radius:10px;\'><span>🧹</span>Add photo: images/service-cleaning.jpg</div>'">
+    </div>
+    <div class="reveal">
+      <div class="section-label">Our Service</div>
+      <h2 class="section-title">Spotless Properties, <span>Every Time</span></h2>
+      <p class="section-sub" style="max-width:100%;">
+        Our professional cleaning team delivers thorough, reliable cleaning services for residential and commercial properties across Nairobi. Whether you need a one-off post-construction clean or ongoing deep cleaning, we have you covered.
+      </p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:28px;">
+        We use professional-grade equipment and eco-friendly cleaning products to deliver consistent, high-quality results — leaving your property spotless and ready for occupancy or handover.
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">Get a Quote</a>
+        <a href="https://wa.me/254793035731?text=Hello,%20I%20would%20like%20a%20quote%20for%20Cleaning%20Services." class="btn-green" target="_blank">WhatsApp for Quote</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cleaning-types">
+  <div class="cleaning-inner">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-label">What We Clean</div>
+      <h2 class="section-title">Cleaning <span>Services We Offer</span></h2>
+    </div>
+    <div class="cleaning-grid">
+      <div class="cleaning-card reveal">
+        <div class="cleaning-icon">🏗️</div>
+        <div>
+          <h4>Post-Construction Cleaning</h4>
+          <p>We remove all construction dust, debris, and residues — leaving your newly built or renovated property completely clean and ready for occupation.</p>
+          <div class="checklist">
+            <span>Dust and debris removal throughout</span>
+            <span>Window and frame cleaning</span>
+            <span>Floor scrubbing and polishing</span>
+            <span>Paint splash removal</span>
+          </div>
+        </div>
+      </div>
+      <div class="cleaning-card reveal">
+        <div class="cleaning-icon">🏠</div>
+        <div>
+          <h4>Residential Deep Cleaning</h4>
+          <p>A thorough deep clean for homes and apartments — ideal for move-in, move-out, or periodic intensive cleaning to restore your property to its best condition.</p>
+          <div class="checklist">
+            <span>Kitchen and bathroom deep clean</span>
+            <span>Carpet and upholstery cleaning</span>
+            <span>Window blinds and curtain cleaning</span>
+            <span>Wall and ceiling cleaning</span>
+          </div>
+        </div>
+      </div>
+      <div class="cleaning-card reveal">
+        <div class="cleaning-icon">🏢</div>
+        <div>
+          <h4>Commercial Cleaning</h4>
+          <p>Reliable office and commercial space cleaning — from retail shops to office parks — keeping your business environment clean, professional, and hygienic.</p>
+          <div class="checklist">
+            <span>Office floors and workstations</span>
+            <span>Washroom sanitisation</span>
+            <span>Reception and common areas</span>
+            <span>Scheduled regular cleaning</span>
+          </div>
+        </div>
+      </div>
+      <div class="cleaning-card reveal">
+        <div class="cleaning-icon">🪨</div>
+        <div>
+          <h4>Outdoor & Paving Cleaning</h4>
+          <p>We clean driveways, parking areas, cabro paving, and terrazzo surfaces — removing stains, moss, and grime for a clean, well-maintained exterior.</p>
+          <div class="checklist">
+            <span>Cabro and paving scrubbing</span>
+            <span>Terrazzo restoration</span>
+            <span>Driveway pressure washing</span>
+            <span>Perimeter wall cleaning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Need a Cleaning Quote?</h2>
+  <p>Contact us today and we'll visit your property for a free assessment and competitive quote.</p>
+  <a href="contact.html" class="btn-white">Request a Quote</a>
+  <a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte,%20I%20need%20a%20cleaning%20services%20quote." class="btn-wa" target="_blank">WhatsApp Now</a>
+</div>
+
+<a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte." class="whatsapp-float" target="_blank">
+  <span class="whatsapp-float-label">Chat with us</span>
+  <div class="whatsapp-float-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Ridgeways Forte" style="height: 44px; width: auto;">
+        <div class="footer-logo-text">
+          Ridgeways Forte
+          <span>Property Management</span>
+        </div>
+      </div>
+      <p>Our team is ready to assist you with all your real estate needs.</p>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul><li><a href="#">Nairobi</a></li><li><a href="#">Ridgeways</a></li><li><a href="#">Westlands</a></li><li><a href="#">Kiambu Road</a></li></ul></div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="management.html">Property Management</a></li><li><a href="marketing.html">Property Marketing</a></li><li><a href="cleaning.html">Cleaning Services</a></li><li><a href="listings.html">All Listings</a></li></ul></div>
+    <div class="footer-col footer-contact"><h5>Contact Us</h5><p>High View Plaza, 2nd Floor<br>Kiambu Road, P.O Box 64780 – 00620 Nairobi</p><p><a href="tel:+254793035731">0793 035 731</a></p><p><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></p></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Ridgeways Forte Property Management. All rights reserved.</span>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61572052684912" class="social-link" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ridgeways_properties/" class="social-link" target="_blank" title="Instagram"><i class="fab fa-square-instagram"></i></a>
+      <!-- ── WHATSAPP — change number here (no + sign, include country code) ── -->
+      <a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte%2C%20I%20would%20like%20to%20enquire%20about%20a%20property."
+         class="social-link whatsapp" target="_blank" title="WhatsApp">
+        <!-- WhatsApp icon (SVG) -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+
+<!-- ══════════════════════════════════════════════════
+     CHAT POP-UP (bottom-right)
+     Replaces the old floating WhatsApp button
+     ══════════════════════════════════════════════════ -->
+<div class="chat-float" id="chatFloat" aria-live="polite">
+  <button class="chat-fab" id="chatFab" type="button" aria-label="Open chat">
+    <span class="chat-fab-icon">💬</span>
+  </button>
+
+  <div class="chat-popup" id="chatPopup" role="dialog" aria-modal="false" aria-label="Chat with Ridgeways Forte">
+    <div class="chat-header">
+      <div class="chat-title">Hey, welcome to RidgewaysForte</div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-bubble">Choose a service to get started:</div>
+      <div class="chat-quicklinks">
+        <a class="chat-link" href="management.html">House Haunting</a>
+        <a class="chat-link" href="marketing.html">Property Marketing</a>
+        <a class="chat-link" href="cleaning.html">Cleaning Services</a>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <a class="chat-footer-btn" href="contact.html">Contact Us →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

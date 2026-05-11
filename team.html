@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet the Team – Ridgeways Forte Property Management</title>
+  <meta name="description" content="Meet the dedicated team behind Ridgeways Forte Property Management. High View Plaza, 2nd Floor, Kiambu Road, Nairobi.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      background: var(--blue); padding: 80px 40px 60px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .page-hero h1 { font-family: var(--font-heading); font-size: clamp(32px,4vw,52px); color: var(--white); font-weight: bold; position: relative; }
+    .page-hero p  { color: rgba(255,255,255,0.75); font-size: 15px; margin-top: 12px; position: relative; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .breadcrumb   { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 16px; position: relative; }
+    .breadcrumb a { color: #7DD4A8; }
+
+    /* ── INTRO ── */
+    .team-intro {
+      background: var(--blue-pale); border-bottom: 3px solid var(--border);
+      padding: 36px 40px; text-align: center;
+    }
+    .team-intro p { max-width: 680px; margin: 0 auto; font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+    .team-intro strong { color: var(--blue); }
+
+    /* ── TEAM WRAPPER ── */
+    .team-page { max-width: 1200px; margin: 0 auto; padding: 72px 40px; }
+
+    /* ── FEATURED LEADER (Managing Director) ── */
+    .featured-leader {
+      background: var(--blue); border-radius: 12px; overflow: hidden;
+      display: grid; grid-template-columns: 300px 1fr;
+      margin-bottom: 60px; box-shadow: 0 12px 40px rgba(26,75,140,0.2);
+    }
+    /*
+    ══════════════════════════════════════════════════════
+    MANAGING DIRECTOR PHOTO
+    Replace src below with the director's headshot.
+    Recommended: 300×400px portrait photo.
+    Save to images/ folder e.g. images/team-director.jpg
+    ══════════════════════════════════════════════════════
+    */
+    .featured-leader-img {
+      width: 100%; height: 100%; min-height: 360px;
+      object-fit: cover; object-position: top center; display: block;
+    }
+    .featured-leader-body { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-label { font-size: 11px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase; color: #7DD4A8; margin-bottom: 10px; }
+    .featured-leader-body h2 { font-family: var(--font-heading); font-size: 34px; color: var(--white); font-weight: bold; margin-bottom: 6px; }
+    .featured-role { font-size: 13px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.12em; font-weight: bold; margin-bottom: 20px; }
+    .featured-leader-body p { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.9; margin-bottom: 28px; }
+    .featured-contacts { display: flex; gap: 12px; flex-wrap: wrap; }
+    .featured-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 4px; font-size: 13px;
+      font-weight: bold; font-family: var(--font-body); text-decoration: none; transition: all 0.2s;
+    }
+    .featured-btn-white { background: var(--white); color: var(--blue); }
+    .featured-btn-white:hover { background: var(--green); color: var(--white); }
+    .featured-btn-wa { background: #25D366; color: var(--white); }
+    .featured-btn-wa:hover { background: #1ebe5d; }
+
+    /* ── TEAM GRID ── */
+    .team-section-label { text-align: center; margin-bottom: 48px; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .team-card {
+      background: var(--white); border-radius: 10px; overflow: hidden;
+      border: 1px solid var(--border); transition: box-shadow 0.3s, transform 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .team-card:hover { box-shadow: 0 12px 40px rgba(26,75,140,0.13); transform: translateY(-5px); }
+
+    .team-img-wrap {
+      position: relative; height: 250px; overflow: hidden; background: var(--blue-pale);
+    }
+    /*
+    ══════════════════════════════════════════════════════
+    TEAM MEMBER PHOTOS
+    For each card below, replace the src with the
+    team member's actual headshot photo.
+    Recommended size: 400×400px (square crop works best)
+
+    Save photos to the images/ folder:
+      images/team-1.jpg   ← Team Member 1
+      images/team-2.jpg   ← Team Member 2
+      images/team-3.jpg   ← Team Member 3
+      images/team-4.jpg   ← Team Member 4
+      images/team-5.jpg   ← Team Member 5
+
+    Then update each src accordingly.
+    ══════════════════════════════════════════════════════
+    */
+    .team-img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      display: block; transition: transform 0.4s ease;
+    }
+    .team-card:hover .team-img { transform: scale(1.04); }
+    .team-img-bar {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+    }
+
+    .team-body { padding: 26px; flex: 1; display: flex; flex-direction: column; }
+    .team-body h4 { font-family: var(--font-heading); font-size: 21px; color: var(--blue); font-weight: bold; margin-bottom: 4px; }
+    .team-role { font-size: 11px; font-weight: bold; color: var(--green); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
+    .team-bio { font-size: 13px; color: var(--text-muted); line-height: 1.8; flex: 1; margin-bottom: 20px; }
+
+    .team-contacts { display: flex; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 16px; }
+    .team-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 4px; font-size: 12px;
+      font-weight: bold; font-family: var(--font-body); text-decoration: none; transition: all 0.2s;
+    }
+    .team-btn-wa { background: #E8F9EE; color: #1A7C3E; border: 1px solid #B7EAC9; }
+    .team-btn-wa:hover { background: #25D366; color: var(--white); border-color: #25D366; }
+    .team-btn-call { background: var(--blue-pale); color: var(--blue); border: 1px solid var(--border); }
+    .team-btn-call:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+    /* ── JOIN US BAND ── */
+    .join-band {
+      background: var(--green); padding: 60px 40px; text-align: center; margin-top: 72px;
+    }
+    .join-band h2 { font-family: var(--font-heading); font-size: clamp(26px,3vw,38px); color: var(--white); font-weight: bold; margin-bottom: 12px; }
+    .join-band p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .join-band .btn-white { display: inline-block; background: var(--white); color: var(--green); padding: 13px 36px; font-size: 13px; font-weight: bold; border-radius: 4px; margin: 0 8px; transition: all 0.25s; }
+    .join-band .btn-white:hover { background: var(--blue); color: var(--white); }
+
+    @media (max-width: 1024px) {
+      .featured-leader { grid-template-columns: 260px 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 60px 20px 48px; }
+      .team-intro { padding: 28px 20px; }
+      .team-page { padding: 48px 20px; }
+      .featured-leader { grid-template-columns: 1fr; }
+      .featured-leader-img { height: 280px; min-height: unset; }
+      .featured-leader-body { padding: 30px 24px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .join-band { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tb-left"><span class="tb-dot">◆</span> Mon – Sat: 8:00 AM – 5:00 PM</div>
+  <div class="tb-right">
+    <span>High View Plaza, 2nd Floor, Kiambu Road</span>
+    <a href="tel:+254793035731">0793 035 731</a>
+    <a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+          <img src="logo.png" alt="Ridgeways Forte" style="height: 50px; width: auto;">
+          <div class="logo-text">
+            Ridgeways Forte
+            <span>Property Management</span>
+          </div>
+        </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active-page">About ▾</a>
+        <div class="dropdown">
+          <a href="about.html">Our Story</a>
+          <a href="team.html">Meet the Team</a>
+          <a href="inquiry.html">Inquiry Form</a>
+        </div>
+      </li>
+      <li><a href="listings.html">Listings ▾</a>
+        <div class="dropdown">
+          <a href="listings.html">All Properties</a>
+          <a href="listings.html?type=apartment">Apartments</a>
+          <a href="listings.html?type=townhouse">Townhouses</a>
+          <a href="listings.html?type=villa">Villas</a>
+          <a href="listings.html?type=commercial">Commercial</a>
+        </div>
+      </li>
+      <li><a href="management.html">Property Management</a></li>
+      <li><a href="marketing.html">Property Marketing</a></li>
+      <li><a href="cleaning.html">Cleaning Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="listings.html">All Listings</a>
+  <a href="management.html">Property Management</a>
+  <a href="marketing.html">Property Marketing</a>
+  <a href="cleaning.html">Cleaning Services</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="about.html">About</a> / Meet the Team</div>
+  <h1>Meet the Team</h1>
+  <p>The dedicated professionals behind Ridgeways Forte Property Management — committed to serving landlords and tenants across Nairobi.</p>
+</div>
+<hr class="divider">
+
+<!-- INTRO STRIP -->
+<div class="team-intro">
+  <p>
+    At <strong>Ridgeways Forte Property Management</strong>, our team brings together years of local real estate expertise,
+    property law knowledge, and genuine commitment to our clients. Every member of our team is reachable,
+    responsive, and ready to help — whether you're a landlord or a tenant.
+  </p>
+</div>
+
+<!-- TEAM PAGE BODY -->
+<div class="team-page">
+
+  <!-- ══ FEATURED: MANAGING DIRECTOR ══════════════════════════
+       This is the large featured card for the top person.
+       CHANGE: Name, Role, Bio text below.
+       PHOTO:  Replace src="../images/team-director.jpg"
+               with your actual Managing Director photo.
+               Recommended size: 300×400px portrait.
+  ══════════════════════════════════════════════════════════ -->
+  <div class="featured-leader reveal">
+    <img
+      class="featured-leader-img"
+      src="agent 1.jpg"
+      alt="Managing Director – Ridgeways Forte"
+      onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:100%;min-height:360px;\'><span>👤</span><div style=\'font-size:12px;text-align:center;padding:0 16px;\'>Add photo:<br>images/team-director.jpg</div></div>'"
+    >
+    <div class="featured-leader-body">
+      <div class="featured-label">Leadership</div>
+      <!-- ── CHANGE NAME HERE ── -->
+      <h2>John Kariuki</h2>
+      <!-- ── CHANGE ROLE HERE ── -->
+      <div class="featured-role">Managing Director</div>
+      <!-- ── CHANGE BIO HERE ── -->
+      <p>
+        With over 8 years of experience in Nairobi's property market, our Managing Director founded
+        Ridgeways Forte with a clear mission: to deliver professional, transparent, and results-driven
+        property management services to landlords across Nairobi. Based at High View Plaza on Kiambu Road,
+        the team has grown to manage over 120 properties and served hundreds of satisfied clients.
+      </p>
+      <div class="featured-contacts">
+        <!-- ── CHANGE WHATSAPP NUMBER HERE ── -->
+        <a href="https://wa.me/254793035731?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20the%20Managing%20Director." class="featured-btn featured-btn-wa" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+254793035731" class="featured-btn featured-btn-white">
+          📞 0793 035 731
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEAM GRID ══════════════════════════════════════════
+       Add as many team cards as you need.
+       To add a new member: copy one full <div class="team-card"> block
+       and paste it inside .team-grid. Fill in the details.
+
+       Each card has:
+         - Photo:   replace src="../images/team-X.jpg"
+         - Name:    change inside <h4>
+         - Role:    change inside <div class="team-role">
+         - Bio:     change inside <p class="team-bio">
+         - Phone:   change the href="tel:..." and display number
+         - WhatsApp: change the href="https://wa.me/254XXXXXXXXX"
+  ══════════════════════════════════════════════════════════ -->
+  <div class="team-section-label reveal">
+    <div class="section-label">Our People</div>
+    <h2 class="section-title">The <span>Full Team</span></h2>
+  </div>
+
+  <div class="team-grid">
+
+    <!-- ── TEAM MEMBER 1 ── -->
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <!--
+          PHOTO: Replace src with your team member photo.
+          Example: src="../images/team-grace.jpg"
+        -->
+        <img class="team-img"
+          src="agent 4.jpg"
+          alt="Team Member"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:250px;\'><span>👤</span><small>Add: images/team-1.jpg</small></div>'">
+        <div class="team-img-bar"></div>
+      </div>
+      <div class="team-body">
+        <!-- ── CHANGE NAME ── -->
+        <h4>Grace Wanjiku</h4>
+        <!-- ── CHANGE ROLE ── -->
+        <div class="team-role">Property Manager</div>
+        <!-- ── CHANGE BIO ── -->
+        <p class="team-bio">
+          Handles day-to-day management of all residential portfolios across Nairobi with precision,
+          care, and deep knowledge of the local market.
+        </p>
+        <div class="team-contacts">
+          <!-- ── CHANGE WHATSAPP NUMBER (keep 254, remove 0) ── -->
+          <a href="https://wa.me/254793035731?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20a%20property." class="team-btn team-btn-wa" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <!-- ── CHANGE DIRECT CALL NUMBER ── -->
+          <a href="tel:+254793035731" class="team-btn team-btn-call">📞 Call</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TEAM MEMBER 2 ── -->
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <img class="team-img"
+          src="agent 2.jpg"
+          alt="Team Member"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:250px;\'><span>👤</span><small>Add: images/team-2.jpg</small></div>'">
+        <div class="team-img-bar"></div>
+      </div>
+      <div class="team-body">
+        <h4>Brian Otieno</h4>
+        <div class="team-role">Sales & Leasing Agent</div>
+        <p class="team-bio">
+          Connects landlords and tenants to the right properties with energy, expertise, and
+          deep knowledge of Nairobi's rental market.
+        </p>
+        <div class="team-contacts">
+          <a href="https://wa.me/254793035731?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20a%20property." class="team-btn team-btn-wa" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+254793035731" class="team-btn team-btn-call">📞 Call</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TEAM MEMBER 3 ── -->
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <img class="team-img"
+          src="agent 3.jpg"
+          alt="Team Member"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:250px;\'><span>👤</span><small>Add: images/team-3.jpg</small></div>'">
+        <div class="team-img-bar"></div>
+      </div>
+      <div class="team-body">
+        <h4>John Chege</h4>
+        <div class="team-role">Client Relations</div>
+        <p class="team-bio">
+          First point of contact for all tenant and landlord inquiries — resolving issues quickly,
+          professionally, and with a friendly approach at all times.
+        </p>
+        <div class="team-contacts">
+          <a href="https://wa.me/254793035731?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20a%20property." class="team-btn team-btn-wa" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+254793035731" class="team-btn team-btn-call">📞 Call</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end team-grid -->
+</div><!-- end team-page -->
+
+<!-- JOIN US BAND -->
+<div class="join-band">
+  <h2>Want to Join Our Team?</h2>
+  <p>We're always looking for talented, passionate property professionals to grow with us. Send your CV to ridgewaysforte@gmail.com or WhatsApp us.</p>
+  <a href="mailto:ridgewaysforte@gmail.com" class="btn-white">Send Your CV</a>
+  <a href="https://wa.me/254793035731?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20a%20job%20at%20Ridgeways%20Forte." class="btn-white" target="_blank" style="background:rgba(255,255,255,0.15);color:var(--white);border:2px solid rgba(255,255,255,0.5);display:inline-block;padding:13px 36px;font-size:13px;font-weight:bold;border-radius:4px;margin:0 8px;transition:all 0.25s;">WhatsApp Us</a>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte%2C%20I%20would%20like%20to%20enquire." class="whatsapp-float" target="_blank">
+  <span class="whatsapp-float-label">Chat with us</span>
+  <div class="whatsapp-float-btn">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Ridgeways Forte" style="height: 44px; width: auto;">
+        <div class="footer-logo-text">
+          Ridgeways Forte
+          <span>Property Management</span>
+        </div>
+      </div>
+      <p>Our team is ready to assist you with all your real estate needs — from finding a home to managing your investment portfolio.</p>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul><li><a href="#">Nairobi</a></li><li><a href="#">Ridgeways</a></li><li><a href="#">Westlands</a></li><li><a href="#">Kiambu Road</a></li></ul></div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="management.html">Property Management</a></li><li><a href="marketing.html">Property Marketing</a></li><li><a href="cleaning.html">Cleaning Services</a></li><li><a href="listings.html">All Listings</a></li></ul></div>
+    <div class="footer-col footer-contact">
+      <h5>Contact Us</h5>
+      <p>High View Plaza, 2nd Floor<br>Kiambu Road, P.O Box 64780 – 00620 Nairobi</p>
+      <p><a href="tel:+254793035731">0793 035 731</a></p>
+      <p><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Ridgeways Forte Property Management. All rights reserved.</span>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61572052684912" class="social-link" target="_blank" title="Facebook"><i class=fab fa-facebook-f></i></a>
+      <a href="https://www.instagram.com/ridgeways_properties/" class="social-link">&#9679;</a>
+      <a href="#" class="social-link">𝕏</a>
+      <a href="#" class="social-link"><i class=fab fa-linkedin-in></i></a>
+      <a href="https://wa.me/254793035731" class="social-link whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+<div class=chat-float id=chatFloat aria-live=polite><div class=chat-message id=chatMessage><div class=chat-msg-header><div class=chat-msg-avatar>👋</div><div><div class=chat-msg-name>Sarah from Ridgeways</div><div class=chat-msg-time>Just now</div></div></div><div class=chat-msg-text>Hi there! Looking for a premium property in Nairobi? I can help you find the perfect home or investment.</div><img class=chat-msg-image src=images/property-msg.jpg alt=Featured property onerror=this.style.display=none><div class=chat-msg-actions><button class=chat-msg-btn primary onclick=openWhatsApp()>Chat on WhatsApp</button><button class=chat-msg-btn secondary onclick=closeChatMessage()>Close</button></div></div><button class=chat-fab id=chatFab type=button aria-label=Open><span class=chat-fab-icon>💬</span></button><div class=chat-popup id=chatPopup role=dialog aria-modal=false><div class=chat-header><div class=chat-title>Hey, welcome to RidgewaysForte</div><button class=chat-close id=chatClose type=button aria-label=Close>×</button></div><div class=chat-body><div class=chat-bubble>Choose a service to get started:</div><div class=chat-quicklinks><a class=chat-link href=management.html>House Haunting</a><a class=chat-link href=marketing.html>Property Marketing</a><a class=chat-link href=cleaning.html>Cleaning Services</a></div></div><div class=chat-footer><a class=chat-footer-btn href=contact.html>Contact Us →</a></div></div></div>
+</body>
+</html>
+
+

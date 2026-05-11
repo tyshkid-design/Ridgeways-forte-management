@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Listings – Ridgeways Forte</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .page-hero {
+      background: var(--blue); padding: 80px 40px 60px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .page-hero h1 { font-family:var(--font-heading); font-size:clamp(32px,4vw,52px); color:var(--white); font-weight:bold; position:relative; }
+    .page-hero p  { color:rgba(255,255,255,0.7); font-size:15px; margin-top:12px; position:relative; }
+    .breadcrumb   { font-size:13px; color:rgba(255,255,255,0.55); margin-bottom:16px; position:relative; }
+    .breadcrumb a { color:#7DD4A8; }
+
+    .listings-page { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
+
+    /* Sidebar + grid layout */
+    .listings-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* Sidebar filters */
+    .sidebar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      position: sticky;
+      top: 90px;
+    }
+    .sidebar-header {
+      background: var(--blue);
+      color: var(--white);
+      padding: 16px 22px;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .sidebar-section { padding: 20px 22px; border-bottom: 1px solid var(--border); }
+    .sidebar-section:last-child { border-bottom: none; }
+    .sidebar-section h4 {
+      font-size: 12px; font-weight: bold;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--text-muted); margin-bottom: 14px;
+    }
+    .sidebar-section label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--text-body);
+      margin-bottom: 10px; cursor: pointer;
+    }
+    .sidebar-section input[type="checkbox"] {
+      accent-color: var(--blue); width: 15px; height: 15px;
+    }
+    .sidebar-section input[type="range"] {
+      width: 100%; accent-color: var(--blue); margin-top: 8px;
+    }
+    .range-labels { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); margin-top:4px; }
+    .sidebar-apply {
+      width: 100%; background: var(--blue); color: var(--white);
+      border: none; padding: 12px; font-size: 13px; font-weight: bold;
+      font-family: var(--font-body); cursor: pointer; margin-top: 8px;
+      border-radius: 4px; transition: background 0.2s;
+    }
+    .sidebar-apply:hover { background: var(--green); }
+
+    /* Results bar */
+    .results-bar {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;
+    }
+    .results-count { font-size: 14px; color: var(--text-muted); }
+    .results-count strong { color: var(--blue); }
+    .sort-select {
+      padding: 8px 14px; border: 1px solid var(--border);
+      border-radius: 4px; font-size: 13px; font-family: var(--font-body);
+      color: var(--text-body); outline: none;
+      background: var(--white);
+    }
+
+    /* Grid of listings uses shared .listing-card styles from style.css */
+    .listings-page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 1024px) {
+      .listings-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .listings-page-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .listings-page { padding: 40px 20px; }
+      .page-hero { padding: 60px 20px 48px; }
+      .listings-page-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="tb-left"><span class="tb-dot">◆</span> Mon – Sat: 8:00 AM – 5:00 PM</div>
+  <div class="tb-right">
+    <span>High View Plaza, 2nd Floor, Kiambu Road</span>
+    <a href="tel:+254793035731">0793 035 731</a>
+    <a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+          <img src="logo.png" alt="Ridgeways Forte" style="height: 50px; width: auto;">
+          <div class="logo-text">
+            Ridgeways Forte
+            <span>Property Management</span>
+          </div>
+        </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About ▾</a>
+        <div class="dropdown">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#team">Meet the Team</a>
+          <a href="contact.html">Inquiry Form</a>
+        </div>
+      </li>
+      <li><a href="listings.html" class="active-page">Listings ▾</a>
+        <div class="dropdown">
+          <a href="listings.html">All Properties</a>
+          <a href="listings.html?type=apartment">Apartments</a>
+          <a href="listings.html?type=townhouse">Townhouses</a>
+          <a href="listings.html?type=villa">Villas</a>
+          <a href="listings.html?type=commercial">Commercial</a>
+        </div>
+      </li>
+      <li><a href="management.html">Property Management</a></li>
+      <li><a href="marketing.html">Property Marketing</a></li>
+      <li><a href="cleaning.html">Cleaning Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="listings.html">All Listings</a>
+  <a href="management.html">Property Management</a>
+  <a href="marketing.html">Property Marketing</a>
+  <a href="cleaning.html">Cleaning Services</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="../index.html">Home</a> / Property Listings</div>
+  <h1>Property Listings</h1>
+  <p>Browse all available residential and commercial properties across Nairobi.</p>
+</div>
+<hr class="divider">
+
+<div class="listings-page">
+  <div class="listings-layout">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="sidebar">
+      <div class="sidebar-header">🔍 Filter Properties</div>
+
+      <div class="sidebar-section">
+        <h4>Property Type</h4>
+        <label><input type="checkbox" value="apartment" checked onchange="applyFilters()"> Apartment</label>
+        <label><input type="checkbox" value="townhouse" checked onchange="applyFilters()"> Townhouse</label>
+        <label><input type="checkbox" value="villa" checked onchange="applyFilters()"> Villa</label>
+        <label><input type="checkbox" value="commercial" checked onchange="applyFilters()"> Commercial</label>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Status</h4>
+        <label><input type="checkbox" value="rent" checked onchange="applyFilters()"> For Rent</label>
+        <label><input type="checkbox" value="sale" onchange="applyFilters()"> For Sale</label>
+      </div>
+
+       <div class="sidebar-section">
+         <h4>Bedrooms</h4>
+         <label><input type="checkbox" name="bedrooms" value="1" checked onchange="applyFilters()"> 1 Bedroom</label>
+         <label><input type="checkbox" name="bedrooms" value="2" checked onchange="applyFilters()"> 2 Bedrooms</label>
+         <label><input type="checkbox" name="bedrooms" value="3" checked onchange="applyFilters()"> 3 Bedrooms</label>
+         <label><input type="checkbox" name="bedrooms" value="4" checked onchange="applyFilters()"> 4+ Bedrooms</label>
+       </div>
+
+      <div class="sidebar-section">
+        <h4>Max Price (KES / month)</h4>
+        <input type="range" min="5000" max="200000" step="5000" value="200000"
+               id="priceRange" oninput="updatePriceLabel(this.value); applyFilters()">
+        <div class="range-labels">
+          <span>5,000</span>
+          <span id="priceLabel">200,000+</span>
+        </div>
+      </div>
+
+       <div class="sidebar-section">
+         <h4>Location</h4>
+         <label><input type="checkbox" name="location" value="Ridgeways" checked onchange="applyFilters()"> Ridgeways</label>
+         <label><input type="checkbox" name="location" value="Westlands" checked onchange="applyFilters()"> Westlands</label>
+         <label><input type="checkbox" name="location" value="Kilimani" checked onchange="applyFilters()"> Kilimani</label>
+         <label><input type="checkbox" name="location" value="Utawala" checked onchange="applyFilters()"> Utawala</label>
+         <label><input type="checkbox" name="location" value="Roysambu" checked onchange="applyFilters()"> Roysambu</label>
+         <label><input type="checkbox" name="location" value="Kiambu" checked onchange="applyFilters()"> Kiambu Road</label>
+       </div>
+    </aside>
+
+    <!-- LISTINGS GRID -->
+    <div>
+      <div class="results-bar">
+        <div class="results-count">Showing <strong id="resultsCount">0</strong> properties</div>
+        <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+          <option value="default">Sort: Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="beds-asc">Bedrooms: Low to High</option>
+        </select>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs" style="margin-bottom:24px;">
+        <button class="filter-tab active" data-filter="all" onclick="quickFilter('all',this)">All</button>
+        <button class="filter-tab" data-filter="apartment" onclick="quickFilter('apartment',this)">Apartments</button>
+        <button class="filter-tab" data-filter="townhouse" onclick="quickFilter('townhouse',this)">Townhouses</button>
+        <button class="filter-tab" data-filter="villa" onclick="quickFilter('villa',this)">Villas</button>
+        <button class="filter-tab" data-filter="commercial" onclick="quickFilter('commercial',this)">Commercial</button>
+      </div>
+
+      <!--
+      ══════════════════════════════════════════════════
+      LISTING CARDS ARE RENDERED BY JavaScript below.
+      To add/edit listings open js/main.js → listings array.
+      Each listing needs an "image" path pointing to your
+      apartment photo in the images/ folder.
+      ══════════════════════════════════════════════════
+      -->
+      <div class="listings-page-grid" id="listingsPageGrid">
+        <!-- Inserted by JS -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte%2C%20I%20would%20like%20to%20enquire%20about%20a%20property." class="whatsapp-float" target="_blank">
+  <span class="whatsapp-float-label">Chat with us</span>
+  <div class="whatsapp-float-btn">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</a>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Ridgeways Forte" style="height: 44px; width: auto;">
+        <div class="footer-logo-text">
+          Ridgeways Forte
+          <span>Property Management</span>
+        </div>
+      </div>
+      <p>Our team is ready to assist you with all your real estate needs.</p>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul><li><a href="#">Nairobi</a></li><li><a href="#">Ridgeways</a></li><li><a href="#">Westlands</a></li><li><a href="#">Kiambu Road</a></li></ul></div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="management.html">Property Management</a></li><li><a href="marketing.html">Property Marketing</a></li><li><a href="cleaning.html">Cleaning Services</a></li><li><a href="listings.html">All Listings</a></li></ul></div>
+    <div class="footer-col footer-contact"><h5>Contact Us</h5><p>High View Plaza, 2nd Floor<br>Kiambu Road, P.O Box 64780 – 00620 Nairobi</p><p><a href="tel:+254793035731">0793 035 731</a></p><p><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></p></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Ridgeways Forte Property Management. All rights reserved.</span>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61572052684912" class="social-link" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ridgeways_properties/" class="social-link" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+      <!-- ── WHATSAPP — change number here (no + sign, include country code) ── -->
+      <a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte%2C%20I%20would%20like%20to%20enquire%20about%20a%20property."
+         class="social-link whatsapp" target="_blank" title="WhatsApp">
+        <!-- WhatsApp icon (SVG) -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+/* Override renderListings to target the listings page grid */
+let activeQuickFilter = 'all';
+
+function quickFilter(type, btn) {
+  activeQuickFilter = type;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function updatePriceLabel(val) {
+  const label = document.getElementById('priceLabel');
+  label.textContent = parseInt(val).toLocaleString() + (val == 200000 ? '+' : '');
+}
+
+function applyFilters() {
+  const grid = document.getElementById('listingsPageGrid');
+  if (!grid) return;
+
+  /* Get filter values */
+  const maxPrice = parseInt(document.getElementById('priceRange')?.value || 200000);
+  const sortVal  = document.getElementById('sortSelect')?.value || 'default';
+
+  /* Get checked bedroom checkboxes */
+  const bedsCheckboxes = document.querySelectorAll('input[name="bedrooms"]:checked');
+  const selectedBeds = Array.from(bedsCheckboxes).map(cb => parseInt(cb.value));
+
+  /* Get checked location checkboxes */
+  const locationCheckboxes = document.querySelectorAll('input[name="location"]:checked');
+  const selectedLocations = Array.from(locationCheckboxes).map(cb => cb.value);
+
+  let filtered = listings.filter(l => {
+    /* Type filter (from quickFilter tabs) */
+    if (activeQuickFilter !== 'all' && l.type !== activeQuickFilter) return false;
+
+    /* Bedrooms filter */
+    if (selectedBeds.length > 0) {
+      if (l.beds === 4) {
+        if (!selectedBeds.includes(4)) return false;
+      } else {
+        if (!selectedBeds.includes(l.beds)) return false;
+      }
+    }
+
+    /* Price filter */
+    const priceNum = parseInt(l.price.replace(/[^0-9]/g, ''));
+    if (priceNum > maxPrice) return false;
+
+    /* Location filter */
+    if (selectedLocations.length > 0) {
+      const locationMatch = selectedLocations.some(loc =>
+        l.location.toLowerCase().includes(loc.toLowerCase())
+      );
+      if (!locationMatch) return false;
+    }
+
+    return true;
+  });
+
+  /* Sort */
+  if (sortVal === 'price-asc')  filtered.sort((a,b) => parseInt(a.price.replace(/\D/g,'')) - parseInt(b.price.replace(/\D/g,'')));
+  if (sortVal === 'price-desc') filtered.sort((a,b) => parseInt(b.price.replace(/\D/g,'')) - parseInt(a.price.replace(/\D/g,'')));
+  if (sortVal === 'beds-asc')   filtered.sort((a,b) => a.beds - b.beds);
+
+  document.getElementById('resultsCount').textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 0;color:var(--text-muted);font-size:15px;">No properties match your filters.</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(l => `
+    <div class="listing-card reveal">
+      <div class="listing-img-wrap">
+        <img class="listing-img" src="../${l.image}" alt="${l.imageAlt}"
+          onerror="this.parentElement.innerHTML=getImgPlaceholder('${l.imageAlt}')">
+        <div class="listing-badges">${getBadgeHTML(l.badge, l.status)}</div>
+        <div class="listing-price-tag">${l.price}</div>
+      </div>
+      <div class="listing-body">
+        <h3>${l.name}</h3>
+        <div class="listing-loc"><span class="loc-icon">📍</span>${l.location}</div>
+        <div class="listing-meta">${getMetaHTML(l.beds, l.baths, l.type)}</div>
+      </div>
+      <button class="listing-view-btn" onclick="viewListing(${l.id})">View Details / Enquire →</button>
+    </div>
+  `).join('');
+
+  observeReveal();
+}
+
+/* Init on page load */
+document.addEventListener('DOMContentLoaded', function() {
+  /* Check URL param e.g. listings.html?type=apartment */
+  const params = new URLSearchParams(window.location.search);
+  const typeParam = params.get('type');
+  if (typeParam) {
+    activeQuickFilter = typeParam;
+    document.querySelectorAll('.filter-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.filter === typeParam);
+    });
+  }
+  applyFilters();
+});
+</script>
+
+<!-- ══════════════════════════════════════════════════
+     CHAT POP-UP (bottom-right)
+     Replaces the old floating WhatsApp button
+     ══════════════════════════════════════════════════ -->
+<div class="chat-float" id="chatFloat" aria-live="polite">
+  <button class="chat-fab" id="chatFab" type="button" aria-label="Open chat">
+    <span class="chat-fab-icon">💬</span>
+  </button>
+
+  <div class="chat-popup" id="chatPopup" role="dialog" aria-modal="false" aria-label="Chat with Ridgeways Forte">
+    <div class="chat-header">
+      <div class="chat-title">Hey, welcome to RidgewaysForte</div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-bubble">Choose a service to get started:</div>
+      <div class="chat-quicklinks">
+        <a class="chat-link" href="management.html">House Haunting</a>
+        <a class="chat-link" href="marketing.html">Property Marketing</a>
+        <a class="chat-link" href="cleaning.html">Cleaning Services</a>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <a class="chat-footer-btn" href="contact.html">Contact Us →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

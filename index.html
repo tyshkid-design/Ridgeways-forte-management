@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ridgeways Forte – Premium Real Estate in Nairobi</title>
+  <meta name="description" content="Ridgeways Forte connects you with premium residential and commercial properties across Nairobi. Property management, marketing and cleaning services.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!--
+  ══════════════════════════════════════════════════
+  HOW TO ADD YOUR FAVICON (browser tab icon):
+  1. Save your logo as a 32×32 PNG named "favicon.png" in the images/ folder
+  2. Uncomment the line below:
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  ══════════════════════════════════════════════════
+  -->
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     TOP BAR
+     Change phone number, email, address and hours here
+     ══════════════════════════════════════════════════ -->
+<div class="topbar">
+  <div class="tb-left">
+    <span class="tb-dot">◆</span>
+    Mon – Sat: 8:00 AM – 5:00 PM
+  </div>
+  <div class="tb-right">
+    <span>High View Plaza, 2nd Floor, Kiambu Road</span>
+    <!-- ── CHANGE PHONE NUMBER HERE ── -->
+    <a href="tel:+254793035731">0793 035 731</a>
+    <!-- ── CHANGE EMAIL HERE ── -->
+    <a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+
+    <!-- ══ LOGO ══════════════════════════════════════
+         OPTION A (text logo — current):
+         Edit the text "RF" and "Ridgeways Forte" below.
+
+         OPTION B (image logo):
+         Replace the entire .logo block with:
+         <a href="index.html" class="logo">
+           <img src="images/logo.png" alt="Ridgeways Forte" style="height:52px;">
+         </a>
+         ══════════════════════════════════════════════ -->
+    <a href="index.html" class="logo">
+          <img src="logo.png" alt="Ridgeways Forte" style="height: 50px; width: auto;">
+          <div class="logo-text">
+            Ridgeways Forte
+            <span>Property Management</span>
+          </div>
+        </a>
+
+    <!-- Navigation links — add/remove <li> items to change the menu -->
+    <ul class="nav-links">
+      <li>
+        <a href="about.html">About ▾</a>
+        <div class="dropdown">
+          <a href="about.html">Our Story</a>
+          <a href="team.html">Meet the Team</a>
+          <a href="inquiry.html">Inquiry Form</a>
+        </div>
+      </li>
+      <li>
+        <a href="listings.html">Listings ▾</a>
+        <div class="dropdown">
+          <a href="listings.html">All Properties</a>
+          <a href="listings.html?type=apartment">Apartments</a>
+          <a href="listings.html?type=townhouse">Townhouses</a>
+          <a href="listings.html?type=villa">Villas</a>
+          <a href="listings.html?type=commercial">Commercial</a>
+        </div>
+      </li>
+      <li><a href="management.html">Property Management</a></li>
+      <li><a href="marketing.html">Property Marketing</a></li>
+      <li><a href="cleaning.html">Cleaning Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile dropdown menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="listings.html">All Listings</a>
+  <a href="management.html">Property Management</a>
+  <a href="marketing.html">Property Marketing</a>
+  <a href="cleaning.html">Cleaning Services</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     HERO SECTION
+     ══════════════════════════════════════════════════ -->
+<section class="hero">
+
+  <!-- ══ HERO BACKGROUND IMAGE ══════════════════════
+       Replace hero-bg.jpg with your own aerial/exterior
+       property photo. Recommended: 1920×1080px or larger.
+       File goes in the images/ folder.
+       ═════════════════════════════════════════════════ -->
+  <div class="hero-bg-img">
+    <!-- Fallback: a styled gradient is shown when no image is present.
+         Once you add images/hero-bg.jpg it will appear automatically. -->
+  </div>
+  <div class="hero-bg-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+
+    <!-- ── CHANGE HERO HEADLINE HERE ── -->
+    <h1>Nairobi's Trusted<br><span class="highlight">Property Management</span><br>Company</h1>
+
+    <!-- ── CHANGE HERO DESCRIPTION HERE ── -->
+    <p class="hero-desc">
+      Ridgeways Forte Property Management connects landlords with quality tenants
+      and handles every aspect of your investment — from marketing and tenant
+      screening to rent collection and maintenance. Based on Kiambu Road, Nairobi.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="listings.html" class="hero-btn-white">Browse Listings</a>
+      <a href="contact.html" class="hero-btn-outline">Speak to an Agent</a>
+    </div>
+  </div>
+
+  <!-- Hero statistics bar — change numbers and labels here -->
+  <div class="hero-stats">
+    <div class="hero-stat-item">
+      <!-- data-target = the number to count up to; data-suffix = "+" or "%" -->
+      <div class="stat-num" data-target="120" data-suffix="+">120+</div>
+      <div class="stat-label">Properties Managed</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="stat-num" data-target="8" data-suffix="+">8+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="stat-num" data-target="500" data-suffix="+">500+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="stat-num" data-target="15">15</div>
+      <div class="stat-label">Nairobi Locations</div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-finance-cta" style="text-align: center; margin: -50px auto 24px; position: relative; z-index: 4;">
+  <a class="hero-btn-white" href="#" target="_blank" rel="noopener noreferrer" style="border-radius: 14px; padding: 10px 22px; font-size: 12px;">explore our finance website  <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PROPERTY SEARCH BAR
+
+     ══════════════════════════════════════════════════ -->
+<div class="search-section">
+  <div class="search-inner">
+    <div class="search-title">Search Properties</div>
+    <div class="search-form">
+      <!-- Add/remove <option> values to change dropdown choices -->
+      <select id="searchStatus">
+        <option value="rent">For Rent</option>
+        <option value="sale">For Sale</option>
+      </select>
+      <select id="searchType">
+        <option value="all">All Types</option>
+        <option value="apartment">Apartment</option>
+        <option value="townhouse">Townhouse</option>
+        <option value="villa">Villa</option>
+        <option value="commercial">Commercial</option>
+      </select>
+      <select id="searchLocation">
+        <option value="">All Locations</option>
+        <option>Ridgeways</option>
+        <option>Westlands</option>
+        <option>Kilimani</option>
+        <option>Lavington</option>
+        <option>Kiambu Road</option>
+        <option>Roysambu</option>
+        <option>Utawala</option>
+        <option>Muthaiga</option>
+        <option>Ngong Road</option>
+      </select>
+      <select id="searchBeds">
+        <option value="">Any Bedrooms</option>
+        <option value="1">1 Bedroom</option>
+        <option value="2">2 Bedrooms</option>
+        <option value="3">3 Bedrooms</option>
+        <option value="4">4+ Bedrooms</option>
+      </select>
+      <input type="text" id="searchPrice" placeholder="Max Price (KES)">
+      <button class="search-btn" id="searchBtn">Search →</button>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════════════
+     SERVICES SECTION
+     ══════════════════════════════════════════════════ -->
+<section class="services-section">
+  <div class="services-header reveal">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Our Real Estate <span>Services</span></h2>
+    <p class="section-sub">
+      We provide a full spectrum of property services designed to protect your
+      investment, attract quality tenants, and keep your property in prime condition.
+    </p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- SERVICE CARD 1 — Property Management -->
+    <div class="service-card reveal">
+      <!-- ══ SERVICE IMAGE ══════════════════════════
+           Replace src with your own photo.
+           Recommended size: 600×280px
+           Example: src="images/service-management.jpg"
+           ═════════════════════════════════════════ -->
+      <img
+        class="service-card-img"
+        src="management.jpg"
+        alt="Property Management"
+        onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:200px;\'><span>🏢</span>Add photo: images/service-management.jpg</div>'"
+      >
+      <div class="service-card-body">
+        <div class="service-card-icon">🏢</div>
+        <h3>Property Management</h3>
+        <p>
+          Managed properties include residential apartments, commercial retail
+          spaces, and warehouses. We act on your behalf to preserve asset value
+          while generating consistent monthly income.
+        </p>
+        <a href="management.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- SERVICE CARD 2 — Property Marketing -->
+    <div class="service-card reveal">
+      <!-- ══ SERVICE IMAGE ══════════════════════════
+           Replace src with your own photo.
+           Example: src="images/service-marketing.jpg"
+           ═════════════════════════════════════════ -->
+      <img
+        class="service-card-img"
+        src="property.jpg"
+        alt="Property Marketing"
+        onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:200px;\'><span>📣</span>Add photo: images/service-marketing.jpg</div>'"
+      >
+      <div class="service-card-body">
+        <div class="service-card-icon">📣</div>
+        <h3>Property Marketing</h3>
+        <p>
+          We create effective marketing plans incorporating digital strategies
+          that attract credit-worthy tenants and serious investors — getting
+          the right eyes on your property fast.
+        </p>
+        <a href="marketing.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+
+    <!-- SERVICE CARD 3 — Cleaning Services -->
+    <div class="service-card reveal">
+      <!-- ══ SERVICE IMAGE ══════════════════════════
+           Replace src with your own photo.
+           Example: src="images/service-cleaning.jpg"
+           ═════════════════════════════════════════ -->
+      <img
+        class="service-card-img"
+        src="cleaning.jpg"
+        alt="Cleaning Services"
+        onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:200px;\'><span>🧹</span>Add photo: images/service-cleaning.jpg</div>'"
+      >
+      <div class="service-card-body">
+        <div class="service-card-icon">🧹</div>
+        <h3>Cleaning Services</h3>
+        <p>
+          We offer post-construction and deep cleaning covering floors,
+          windows, walls, ceilings, window blinds, cabro, terrazzo scrubbing,
+          and full facility care for residential and commercial buildings.
+        </p>
+        <a href="cleaning.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════════════
+     FEATURED LISTINGS
+     ══════════════════════════════════════════════════ -->
+<section class="listings-section" id="listings">
+  <div class="listings-header reveal">
+    <div>
+      <div class="section-label">Featured Properties</div>
+      <h2 class="section-title">Our Latest <span>Listings</span></h2>
+    </div>
+    <a href="listings.html" class="btn-primary">View All Properties</a>
+  </div>
+
+  <!-- Filter tabs — add a new tab by adding a <button data-filter="yourtype"> -->
+  <div class="filter-tabs reveal">
+    <button class="filter-tab active" data-filter="all">All Properties</button>
+    <button class="filter-tab" data-filter="apartment">Apartments</button>
+    <button class="filter-tab" data-filter="townhouse">Townhouses</button>
+    <button class="filter-tab" data-filter="villa">Villas</button>
+    <button class="filter-tab" data-filter="commercial">Commercial</button>
+  </div>
+
+  <!--
+  ══════════════════════════════════════════════════
+  LISTINGS ARE RENDERED BY JavaScript (js/main.js)
+  To add/edit listings, open js/main.js and find
+  the "listings" array near the top of the file.
+  Each listing has an "image" field — point it to
+  your photo file in the images/ folder.
+  ══════════════════════════════════════════════════
+  -->
+  <div class="listings-grid" id="listingsGrid">
+    <!-- Cards inserted here by JS -->
+  </div>
+
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════════════
+     WHY CHOOSE US
+     ══════════════════════════════════════════════════ -->
+<section class="why-section">
+  <div class="why-grid">
+
+    <div class="why-img-wrap reveal">
+      <!-- ══ WHY-US SECTION IMAGE ════════════════════
+           Replace with a photo of your office, team,
+           or a luxury property interior/exterior.
+           Recommended: 700×520px
+           Example: src="images/about-office.jpg"
+           ════════════════════════════════════════════ -->
+      <img
+        class="why-img"
+        src="home 1.jpg"
+        alt="Ridgeways Forte Office"
+        onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:520px;\'><span>🏠</span>Add photo: images/about-office.jpg</div>'"
+      >
+      <div class="why-img-badge">
+        <div class="badge-num">120+</div>
+        <div class="badge-txt">Properties Managed</div>
+      </div>
+    </div>
+
+    <div class="why-items">
+      <div class="reveal">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">The Perfect <span>Choice</span> for Your Property</h2>
+      </div>
+
+      <!-- WHY ITEMS — edit text freely below -->
+      <div class="why-item reveal">
+        <div class="why-number">01</div>
+        <div class="why-text">
+          <h4>We Increase the Value of Your Investment</h4>
+          <p>
+            Consistent, on-time rent collection maintains your cash flow.
+            Our professional team enforces lease terms firmly — protecting
+            your investment and ensuring reliable income every month.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-item reveal">
+        <div class="why-number">02</div>
+        <div class="why-text">
+          <h4>Higher Quality Tenants</h4>
+          <p>
+            Our thorough screening process identifies reliable tenants who
+            pay on time, stay longer, and cause less wear — saving you
+            time, money, and stress in the long run.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-item reveal">
+        <div class="why-number">03</div>
+        <div class="why-text">
+          <h4>Fewer Legal Problems</h4>
+          <p>
+            We stay up to date with Kenyan landlord-tenant laws, ensuring
+            your property is always compliant — so you never face
+            unexpected legal disputes or financial penalties.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════════════
+     INQUIRY FORM
+     ══════════════════════════════════════════════════ -->
+<section class="inquiry-section" id="contact">
+  <div class="inquiry-inner">
+
+    <!-- LEFT: Contact info -->
+    <div class="inquiry-info">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Real Estate <span>Inquiry</span></h2>
+      <p class="section-sub">
+        Let us help you find the best home for your family or the ideal
+        space for your business. Our team responds within 24 hours.
+      </p>
+
+      <!-- ── CHANGE CONTACT DETAILS BELOW ── -->
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div class="contact-text">
+          <p>Call or WhatsApp us</p>
+          <a href="tel:+254793035731">0793 035 731</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <p>Email us anytime</p>
+          <a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text">
+          <p>Visit our office</p>
+          <a href="https://maps.google.com" target="_blank">High View Plaza, 2nd Floor, Kiambu Road</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-text">
+          <p>Office hours</p>
+          <a>Mon – Sat: 8:00 AM – 5:00 PM</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="inquiry-form">
+      <h3>Send Us a Message</h3>
+      <form id="inquiryForm" novalidate>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="inquiryType">Inquiry Type</label>
+            <select id="inquiryType" name="inquirytype">
+              <option value="">Select…</option>
+              <option>Rent Evaluation</option>
+              <option>Property Management</option>
+              <option>Looking to Rent</option>
+              <option>Looking to Buy</option>
+              <option>Cleaning Services</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="personType">I Am</label>
+            <select id="personType" name="persontype">
+              <option value="">Select…</option>
+              <option>A Tenant</option>
+              <option>A Property Owner</option>
+              <option>A Real Estate Agent</option>
+              <option>An Investor</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required>
+          </div>
+
+          <div class="form-group full">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="propType">Property Type</label>
+            <select id="propType" name="proptype">
+              <option value="">Select Type</option>
+              <option>Apartment</option>
+              <option>Townhouse</option>
+              <option>Villa</option>
+              <option>Office</option>
+              <option>Shop / Retail</option>
+              <option>Warehouse</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Preferred Location</label>
+            <select id="location" name="location">
+              <option value="">Select Area</option>
+              <option>Ridgeways</option>
+              <option>Westlands</option>
+              <option>Kilimani</option>
+              <option>Lavington</option>
+              <option>Kiambu Road</option>
+              <option>Roysambu</option>
+              <option>Utawala</option>
+              <option>Muthaiga</option>
+              <option>Ngong Road</option>
+              <option>Ongata Rongai</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="budget">Budget (KES / Monthly)</label>
+            <input type="text" id="budget" name="budget" placeholder="e.g. 30,000">
+          </div>
+
+          <div class="form-group full">
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us more about what you're looking for…"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <button type="submit" class="form-submit" id="formSubmit">Submit Inquiry</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════════════
+     EXPLORE AREAS
+     ══════════════════════════════════════════════════ -->
+<section class="areas-section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;">
+      <div class="section-label">Browse by Location</div>
+      <h2 class="section-title">Popular <span>Areas</span> in Nairobi</h2>
+    </div>
+    <div class="areas-grid">
+      <!-- Edit area name and property count freely -->
+      <div class="area-card reveal" onclick="filterByArea('Ridgeways')">
+        <h4>Ridgeways</h4>
+        <div class="area-count">8 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Westlands')">
+        <h4>Westlands</h4>
+        <div class="area-count">6 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Kilimani')">
+        <h4>Kilimani</h4>
+        <div class="area-count">5 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Lavington')">
+        <h4>Lavington</h4>
+        <div class="area-count">4 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Kiambu Road')">
+        <h4>Kiambu Road</h4>
+        <div class="area-count">7 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Roysambu')">
+        <h4>Roysambu</h4>
+        <div class="area-count">3 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Utawala')">
+        <h4>Utawala</h4>
+        <div class="area-count">9 Properties</div>
+      </div>
+      <div class="area-card reveal" onclick="filterByArea('Ongata Rongai')">
+        <h4>Ongata Rongai</h4>
+        <div class="area-count">4 Properties</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+
+    <!-- Footer brand block — change logo and description -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Ridgeways Forte" style="height: 44px; width: auto;">
+        <div class="footer-logo-text">
+          Ridgeways Forte
+          <span>Property Management</span>
+        </div>
+      </div>
+      <p>
+        Our team of experts is ready to assist you with all your real estate
+        needs — from finding a home to managing your investment portfolio.
+        We are with you every step of the way.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Discover</h5>
+      <ul>
+        <li><a href="#">Nairobi</a></li>
+        <li><a href="#">Ridgeways</a></li>
+        <li><a href="#">Westlands</a></li>
+        <li><a href="#">Kiambu Road</a></li>
+        <li><a href="#">Lavington</a></li>
+        <li><a href="#">Utawala</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="pages/management.html">Property Management</a></li>
+        <li><a href="pages/marketing.html">Property Marketing</a></li>
+        <li><a href="pages/cleaning.html">Cleaning Services</a></li>
+        <li><a href="pages/listings.html">All Listings</a></li>
+        <li><a href="pages/about.html">About Us</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h5>Contact Us</h5>
+      <!-- ── CHANGE ADDRESS, PHONE, EMAIL BELOW ── -->
+      <p>High View Plaza, 2nd Floor<br>Kiambu Road, P.O Box 64780 – 00620 Nairobi</p>
+      <p><a href="tel:+254793035731">0793 035 731</a></p>
+      <p><a href="mailto:ridgewaysforte@gmail.com">ridgewaysforte@gmail.com</a></p>
+      <p>Mon – Sat: 8:00 AM – 5:00 PM</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <!-- ── CHANGE COPYRIGHT YEAR / NAME HERE ── -->
+    <span class="footer-copy">© 2025 Ridgeways Forte Property Management. All rights reserved.</span>
+
+    <!-- Social media icons
+         ── TO CHANGE LINKS: replace href="#" with your actual URL
+         ── TO CHANGE WHATSAPP NUMBER: change 254793035731 below ── -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61572052684912" class="social-link" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ridgeways_properties/" class="social-link" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+      <!-- ── WHATSAPP — change number here (no + sign, include country code) ── -->
+      <a href="https://wa.me/254793035731?text=Hello%20Ridgeways%20Forte%2C%20I%20would%20like%20to%20enquire%20about%20a%20property."
+         class="social-link whatsapp" target="_blank" title="WhatsApp">
+        <!-- WhatsApp icon (SVG) -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     CHAT POP-UP (bottom-right)
+     Replaces the old floating WhatsApp button
+     ══════════════════════════════════════════════════ -->
+<div class="chat-float" id="chatFloat" aria-live="polite">
+  <button class="chat-fab" id="chatFab" type="button" aria-label="Open chat">
+    <span class="chat-fab-icon">💬</span>
+  </button>
+
+  <div class="chat-popup" id="chatPopup" role="dialog" aria-modal="false" aria-label="Chat with Ridgeways Forte">
+    <div class="chat-header">
+      <div class="chat-title">Hey, welcome to RidgewaysForte</div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="chat-bubble">Choose a service to get started:</div>
+      <div class="chat-quicklinks">
+        <a class="chat-link" href="management.html">House Haunting</a>
+        <a class="chat-link" href="marketing.html">Property Marketing</a>
+        <a class="chat-link" href="cleaning.html">Cleaning Services</a>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <a class="chat-footer-btn" href="contact.html">Contact Us →</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- JavaScript -->
+<script src="main.js"></script>
+<script>
+  /* Area card click handler — scrolls to listings and shows all */
+  function filterByArea(area) {
+    renderListings("all");
+    document.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active"));
+    document.querySelector(".filter-tab[data-filter='all']").classList.add("active");
+    document.getElementById("listings").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+
